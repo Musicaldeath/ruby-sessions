@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'session/validate'
 
-  get 'session/list'
+  #SESSIONS
+  post    'session',            to: 'session#validate'
+  get     'session',            to: 'session#create'
+  get     'session/:id',        to: 'session#regenerate'
+  delete  'session/:id',        to: 'session#destroy'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
